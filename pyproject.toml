@@ -13,9 +13,9 @@ requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
 
-[project.optional-dependencies]
-dev = [
-]
+[project.scripts]
+atumm-tool = "atumm.tool.entrypoints.main:app"
+
 [build-system]
 requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"

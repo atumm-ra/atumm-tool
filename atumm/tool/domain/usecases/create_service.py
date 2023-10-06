@@ -1,13 +1,13 @@
-from atumm.core.types import CommandUseCase, Command
-
+from atumm.core.types import CommandUseCaseSync, Command
+from atumm.tool.domain.utils import create_module
 
 class CreateServiceCommand(Command):
     service_name: str
 
 
-class CreateServiceUseCase(CommandUseCase[CreateServiceCommand]):
+class CreateServiceUseCase(CommandUseCaseSync[CreateServiceCommand]):
 
-    async def execute(self, command: CreateServiceCommand):
+    def execute(self, command: CreateServiceCommand):
         """
         Create a new service with the given service name.
         """

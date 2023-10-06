@@ -1,14 +1,15 @@
-from atumm.core.types import Command, CommandUseCase
+from atumm.core.types import Command, CommandUseCaseSync
+from atumm.tool.domain.utils import create_module
 
 
-class CreateRestResourceCommand(Command):
+class AddRestResourceCommand(Command):
     service_name: str
     resource_name: str
 
 
-class CreateRestResourceUseCase(CommandUseCase[CreateRestResourceCommand]):
+class AddRestResourceUseCase(CommandUseCaseSync[AddRestResourceCommand]):
 
-    async def execute(self, command: CreateRestResourceCommand):
+    def execute(self, command: AddRestResourceCommand):
         """
         Create a new REST resource with the given service and resource names.
         """
